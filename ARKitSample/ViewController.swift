@@ -24,10 +24,31 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         sceneView.showsStatistics = true
         
         // Create a new scene
-        let scene = SCNScene(named: "art.scnassets/ship.scn")!
+        
+        let scene = SCNScene(named: "art.scnassets/Mickey_Mouse.scn")!
+        
+//        let scene = SCNScene()
+//        let position = SCNVector3(0, 0, -0.3)
+//        let globe = createGlobe(at: position)
+//        scene.rootNode.addChildNode(globe)
         
         // Set the scene to the view
         sceneView.scene = scene
+    }
+    
+//    func createRandom(atPosition : SCNVector3) -> SCNNode{
+//        
+//        let 
+//    }
+    
+    func createGlobe(at position: SCNVector3) -> SCNNode{
+        let sphere = SCNSphere(radius: 0.1)
+        let material = SCNMaterial()
+        material.diffuse.contents = UIImage(named: "art.scnassets/earth.jpg")
+        sphere.firstMaterial = material
+        let sphereNode = SCNNode(geometry: sphere)
+        sphereNode.position = position
+        return sphereNode
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,6 +66,22 @@ class ViewController: UIViewController, ARSCNViewDelegate {
         
         // Pause the view's session
         sceneView.session.pause()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touch = touches.first else { return }
+        let results = sceneView.hitTest(touch.location(in: sceneView), types: [ARHitTestResult.ResultType.featurePoint])
+        guard let hitFeature = results.last else { return }
+        let hitTransform = SCNMatrix4(hitFeature.worldTransform)
+        let hitPosition = SCNVector3Make(hitTransform.m41, hitTransform.m42, hitTransform.m43)
+        createBall(hitPosition: hitPosition)
+    }
+    
+    func createBall(hitPosition : SCNVector3) {
+        let newBall = SCNSphere(radius: 0.01)
+        let newBallNode = SCNNode(geometry: newBall)
+        newBallNode.position = hitPosition
+        self.sceneView.scene.rootNode.addChildNode(newBallNode)
     }
     
     override func didReceiveMemoryWarning() {
