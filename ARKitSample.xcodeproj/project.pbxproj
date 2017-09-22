@@ -15,6 +15,7 @@
 		811D6DA01F73C1B400C82FCD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 811D6D9E1F73C1B400C82FCD /* LaunchScreen.storyboard */; };
 		811D6DAB1F73C1B400C82FCD /* ARKitSampleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811D6DAA1F73C1B400C82FCD /* ARKitSampleTests.swift */; };
 		811D6DB61F73C1B400C82FCD /* ARKitSampleUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 811D6DB51F73C1B400C82FCD /* ARKitSampleUITests.swift */; };
+		81AE26A81F7518F90089650E /* MickyMouseNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AE26A71F7518F90089650E /* MickyMouseNode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		811D6DB11F73C1B400C82FCD /* ARKitSampleUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ARKitSampleUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		811D6DB51F73C1B400C82FCD /* ARKitSampleUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARKitSampleUITests.swift; sourceTree = "<group>"; };
 		811D6DB71F73C1B400C82FCD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		81AE26A71F7518F90089650E /* MickyMouseNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MickyMouseNode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				811D6D9C1F73C1B400C82FCD /* Assets.xcassets */,
 				811D6D9E1F73C1B400C82FCD /* LaunchScreen.storyboard */,
 				811D6DA11F73C1B400C82FCD /* Info.plist */,
+				81AE26A71F7518F90089650E /* MickyMouseNode.swift */,
 			);
 			path = ARKitSample;
 			sourceTree = "<group>";
@@ -263,6 +266,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				81AE26A81F7518F90089650E /* MickyMouseNode.swift in Sources */,
 				811D6D981F73C1B400C82FCD /* ViewController.swift in Sources */,
 				811D6D941F73C1B400C82FCD /* AppDelegate.swift in Sources */,
 			);
